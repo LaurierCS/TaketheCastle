@@ -32,4 +32,4 @@ $ git clone https://github.com/LaurierCS/Pod4.git
 Now open Unity Hub and locate the Unity project, which is the `Take the Castle` folder.
 
 ## Contribute
-To contribute to this project, read the [contribution](/.github/CONTRIBUTION.md) guidelines.
+To contribute to this project, read the [contribution](/.github/CONTRIBUTE.md) guidelines.
