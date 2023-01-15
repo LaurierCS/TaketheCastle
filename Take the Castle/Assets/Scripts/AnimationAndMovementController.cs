@@ -36,6 +36,8 @@ public class AnimationAndMovementController : MonoBehaviour
     float maxJumpHeight = 0.7f;
     float maxJumpTime = 0.75f;
     bool isJumping = false;
+    int isJumpingHash;
+    bool isJumpAnimating = false;
 
     void setupJumpVariables()
     {
@@ -48,6 +50,8 @@ public class AnimationAndMovementController : MonoBehaviour
     {
         if (!isJumping && characterController.isGrounded && isJumpPressed)
         {
+            animator.SetBool(isJumpingHash, true);
+            isJumpAnimating = true;
             isJumping = true;
             currentMovement.y = initialJumpVelocity * 0.5f;
             currentRunMovement.y = initialJumpVelocity * 0.5f;
@@ -135,6 +139,12 @@ public class AnimationAndMovementController : MonoBehaviour
         // apply proper gravity depending on if the character is grounded or not
         if (characterController.isGrounded)
         {
+            if (isJumpAnimating)
+            {
+                animator.SetBool(isJumpingHash, false);
+                isJumpAnimating = false;
+            }
+            animator.SetBool(isJumpingHash, false);
             currentMovement.y = groundedGravity;
             currentRunMovement.y = groundedGravity;
         } 
@@ -167,6 +177,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
+        isJumpingHash = Animator.StringToHash("isJumping");
 
         // set the player input callbacks
         playerInput.CharacterControls.Move.started += onMovementInput;
