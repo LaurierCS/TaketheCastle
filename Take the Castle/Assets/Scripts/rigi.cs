@@ -11,6 +11,7 @@ public class rigi : MonoBehaviour
     private int count;
     private bool didMove;
     private Vector3 p;
+    private playerDetection chas;
 
     
     // Start is called before the first frame update
@@ -20,25 +21,27 @@ public class rigi : MonoBehaviour
         count = 0;
         didMove = false;
         p = transform.position;
+        chas = GetComponent<playerDetection>();
         // float targetAngle = Mathf.Atan2(pointArr[count].position.x, pointArr[count].position.z);
         // transform.Rotate(0f, targetAngle, 0f);
 
         // transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, 0);
         // count = count +1;
-        
     }
 
     // Update is called once per frame
     void Update()
     {       
-        
+        bool spotted = chas.chase;
+        if (spotted == false)
+        {
         var lookPos = pointArr[count].position - transform.position;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
         if (!didRotate){  
             
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
         }
 
         if (transform.rotation == rotation){
@@ -51,6 +54,7 @@ public class rigi : MonoBehaviour
         if (transform.position== pointArr[count].position){
              count= (count +1) % pointArr.Length;
              didRotate = false;
+        }  
         }
 
         // }
