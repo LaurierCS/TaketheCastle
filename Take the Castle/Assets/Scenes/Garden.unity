@@ -21154,7 +21154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2f382675ed490da90f43a5814d312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Garden
+  nextLevel: End Menu
   uiElement: {fileID: 3843456}
 --- !u!65 &1978867861
 BoxCollider:

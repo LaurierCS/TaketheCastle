@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 546f8661b37e5cf4ba85e5bbd418a88f
+  - enabled: 1
+    path: Assets/Scenes/End Menu.unity
+    guid: 2c023282ecb185b448c7c59d04f0908b
   m_configObjects: {}
