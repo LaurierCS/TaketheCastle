@@ -33,7 +33,7 @@ public class AnimationAndMovementController : MonoBehaviour
     // jump variables
     bool isJumpPressed = false;
     float initialJumpVelocity;
-    float maxJumpHeight = 0.7f;
+    float maxJumpHeight = 1.4f;
     float maxJumpTime = 1.0f;
     bool isJumping = false;
     int isJumpingHash;
