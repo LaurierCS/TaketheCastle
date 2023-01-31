@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PrisonLevel.unity
     guid: ec4a199726a714c76a414a1c842b6c1d
   - enabled: 1
+    path: Assets/Scenes/Hallway.unity
+    guid: ae76371665e123f4b9349c4b4b0ea572
+  - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 546f8661b37e5cf4ba85e5bbd418a88f
   m_configObjects: {}
